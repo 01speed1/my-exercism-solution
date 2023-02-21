@@ -86,7 +86,6 @@ fn test_two_pairs_second_pair_cascade() {
 }
 
 #[test]
-#[ignore]
 fn test_two_pairs_last_card_cascade() {
     // both hands have two identically ranked pairs,
     // tie goes to remaining card (kicker)
@@ -168,14 +167,12 @@ fn test_full_house_beats_a_flush() {
 }
 
 #[test]
-#[ignore]
 fn test_full_house_ranks() {
     // both hands have a full house, tie goes to highest-ranked triplet
     test(&["4H 4S 4D 9S 9D", "5H 5S 5D 8S 8D"], &["5H 5S 5D 8S 8D"])
 }
 
 #[test]
-#[ignore]
 fn test_full_house_cascade() {
     // with multiple decks, both hands have a full house with the same triplet, tie goes to the pair
     test(&["5H 5S 5D 9S 9D", "5H 5S 5D 8S 8D"], &["5H 5S 5D 9S 9D"])
@@ -187,27 +184,23 @@ fn test_four_of_a_kind_beats_full_house() {
 }
 
 #[test]
-#[ignore]
 fn test_four_of_a_kind_ranks() {
     // both hands have four of a kind, tie goes to high quad
     test(&["2S 2H 2C 8D 2D", "4S 5H 5S 5D 5C"], &["4S 5H 5S 5D 5C"])
 }
 
 #[test]
-#[ignore]
 fn test_four_of_a_kind_cascade() {
     // with multiple decks, both hands with identical four of a kind, tie determined by kicker
     test(&["3S 3H 2S 3D 3C", "3S 3H 4S 3D 3C"], &["3S 3H 4S 3D 3C"])
 }
 
 #[test]
-#[ignore]
 fn test_straight_flush_beats_four_of_a_kind() {
     test(&["4S 5H 5S 5D 5C", "7S 8S 9S 6S 10S"], &["7S 8S 9S 6S 10S"])
 }
 
 #[test]
-#[ignore]
 fn test_aces_can_end_a_straight_flush_high() {
     // aces can end a straight flush (10 J Q K A)
     test(&["KC AH AS AD AC", "10C JC QC KC AC"], &["10C JC QC KC AC"])
@@ -220,7 +213,6 @@ fn test_aces_can_start_a_straight_flush_low() {
 }
 
 #[test]
-#[ignore]
 fn test_no_ace_in_middle_of_straight_flush() {
     // aces cannot be in the middle of a straight flush (Q K A 2 3)
     test(&["2C AC QC 10C KC", "QH KH AH 2H 3H"], &["2C AC QC 10C KC"])
