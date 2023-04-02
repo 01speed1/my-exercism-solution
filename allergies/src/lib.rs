@@ -19,8 +19,6 @@ pub enum Allergen {
 
 impl Allergies {
     pub fn new(score: u32) -> Self {
-        // unimplemented!("Given the '{score}' score, construct a new Allergies struct.");
-
         let mut map: HashMap<Allergen, u32> = HashMap::new();
 
         map.insert(Allergen::Eggs, 1);
@@ -38,26 +36,7 @@ impl Allergies {
         };
 
         let mut score_checked = score;
-        let mut posible_allergies: HashMap<Allergen, u32> = map
-            .iter()
-            .filter(|(allergy, score)| score <= score_checked)
-            .collect();
 
-        while score_checked > 0 {
-            posible_allergies
-        }
-
-        /* for (allergy, value) in map.iter() {
-                   if value <= &created_allergies.score {
-                       created_allergies.allergies.push(allergy.clone());
-                   }
-
-                   if value == &created_allergies.score {
-                       created_allergies.allergies.clear();
-                       created_allergies.allergies.push(allergy.clone());
-                   }
-               }
-        */
         created_allergies
     }
 
