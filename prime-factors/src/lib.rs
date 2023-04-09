@@ -7,23 +7,23 @@ pub fn factors(n: u64) -> Vec<u64> {
         return vec![2];
     }
     let mut current_factors = vec![];
-    current_factors.push(2);
 
     let mut factorized_number = n;
+    let mut factor_increment = 2;
+    let mut was_factorized = false;
 
     while factorized_number != 1 {
-        for factor in &current_factors {
-            if factorized_number % factor == 0 {
-                factorized_number = factorized_number / factor
-            }
+        if factorized_number % factor_increment == 0 {
+            factorized_number = factorized_number / factor_increment;
+            was_factorized = true;
         }
-        let next_value_after_last_factor = current_factors.last().unwrap() + 1;
-
-        if !current_factors.contains(&next_value_after_last_factor) {
-            let last = current_factors.pop().unwrap();
-            current_factors.push(last + 1)
+        if !was_factorized {
+            factor_increment = factor_increment + 1
+        } else {
+            current_factors.push(factor_increment);
+            was_factorized = false
         }
-        current_factors.clone().into_iter();
+        println!("{} {:?}", factor_increment, current_factors);
     }
 
     current_factors
