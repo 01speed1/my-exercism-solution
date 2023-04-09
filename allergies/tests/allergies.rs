@@ -52,7 +52,6 @@ fn allergic_to_just_eggs() {
 }
 
 #[test]
-#[ignore]
 fn allergic_to_just_peanuts() {
     let expected = &[Allergen::Peanuts];
     let allergies = Allergies::new(2).allergies();
@@ -61,7 +60,6 @@ fn allergic_to_just_peanuts() {
 }
 
 #[test]
-#[ignore]
 fn allergic_to_just_strawberries() {
     let expected = &[Allergen::Strawberries];
     let allergies = Allergies::new(8).allergies();
@@ -86,7 +84,6 @@ fn allergic_to_eggs_and_shellfish() {
 }
 
 #[test]
-#[ignore]
 fn allergic_to_many_things() {
     let expected = &[
         Allergen::Strawberries,
@@ -101,7 +98,6 @@ fn allergic_to_many_things() {
 }
 
 #[test]
-#[ignore]
 fn allergic_to_everything() {
     let expected = &[
         Allergen::Eggs,
@@ -119,7 +115,6 @@ fn allergic_to_everything() {
 }
 
 #[test]
-#[ignore]
 fn scores_over_255_do_not_trigger_false_positives() {
     let expected = &[
         Allergen::Eggs,
